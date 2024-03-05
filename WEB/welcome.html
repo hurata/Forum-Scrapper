@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="templates/welcome.css">
+
+    <!-- The welcome struct (shown in the main.go code) is
+    received within the HTML and we just need to use
+    the . operator and retrieve the information we want -->
+    <title>Welcome {{.Name}}</title>
+</head>
+<body>
+<h2 style="color: #324310; margin-left: 30px" >Forum Site Scrapping</h2>
+
+<form action="/login" method="post">
+    <div class="inForm">
+        <h3 style="color: olivedrab">Site Settings</h3>
+
+        <label for="lname">Site Link:</label><br>
+        <input type="text" id="lname" name="site" value="https://www.r10.net/"><br>
+        <label for="lname">How Much GoRoutine:</label><br>
+        <input type="text" id="lname" name="go_routines" value="4"><br>
+        <label for="lname">Is Sub-Forum Status Online?: </label>
+        <input type="checkbox" id="lname" name="sub_forum_status" value="1" checked><br>
+    </div>
+
+    <div class="inForm">
+        <h3 style="color: olivedrab">Forum Items Div's</h3>
+
+        <label for="lname">Forum Main Div:</label><br>
+        <input type="text" id="lname" name="site_main_div" value="li.forum"><br>
+        <label for="lname">Forum Name div:</label><br>
+        <input type="text" id="lname" name="forum_name" value="div.title a"><br>
+        <label for="lname">Forum Description div:</label><br>
+        <input type="text" id="lname" name="forum_desc" value="div.desc"><br>
+        <label for="lname">Forum Link div:</label><br>
+        <input type="text" id="lname" name="forum_link" value="div.title a"><br>
+        <label for="lname">Forum Link Attribute:</label><br>
+        <input type="text" id="lname" name="forum_link_attr" value="href"><br>
+    </div>
+
+    <div class="inForm">
+        <h3 style="color: olivedrab">Forum Page Status Div's</h3>
+
+        <label for="lname">Forum Lastpage Main div:</label><br>
+        <input type="text" id="lname" name="forum_lastpage_div" value="li.last a"><br>
+        <label for="lname">Forum Lastpage div:</label><br>
+        <input type="text" id="lname" name="forum_lastpage" value="div.pagination div.right"><br>
+        <label for="lname">Forum Lastpage Attribute:</label><br>
+        <input type="text" id="lname" name="forum_lastpage_attr" value="href"><br>
+        <label for="lname">Forum Next Page:</label><br>
+        <input type="text" id="lname" name="forum_lastpage_number" value="li a.smallfont"><br>
+
+    </div>
+
+    <div class="inForm">
+        <h3 style="color: olivedrab">Forum Threads Div's</h3>
+
+        <label for="lname">Forum Threads Main div:</label><br>
+        <input type="text" id="lname" name="thread_main_div" value="div.threadList form ul li div.title"><br>
+        <label for="lname">Forum Threads Name div:</label><br>
+        <input type="text" id="lname" name="thread_name" value="a span"><br>
+        <label for="lname">Forum Threads Link div:</label><br>
+        <input type="text" id="lname" name="thread_link" value="a"><br>
+        <label for="lname">Forum Threads Link Attribute:</label><br>
+        <input type="text" id="lname" name="thread_link_attr" value="href"><br><br>
+
+        <input style="float: right; font-size: 16px" type="submit" value="Send Values">
+    </div>
+
+</form>
+
+<p class="float" style="color: #28350c">If you click the "Send Values" button, the form-data will be sent to DataBase "/login".</p>
+
+<div class="welcome center float">Welcome {{.Name}}, Server start time is : {{.Time}}</div>
+</body>
+</html>
